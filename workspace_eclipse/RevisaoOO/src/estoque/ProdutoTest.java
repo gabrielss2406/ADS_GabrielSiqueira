@@ -1,14 +1,16 @@
 package estoque;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.time.LocalDate;
 import java.time.Month;
 
 import org.junit.jupiter.api.Test;
 
-class ContaTest {
+class ProdutoTest {
 
 	@Test
-	void testeProdutoComoJavaBean() {
+	void testProdutoComoJavaBean() {
 		Produto p = new Produto();
 		p.setDescricao("Queijo Minas 1Kg");
 		p.setValorCompra(50.00);
@@ -19,4 +21,5 @@ class ContaTest {
 		System.out.println(p.getValorCompra());
 		System.out.println(p.getDataValidade());
 	}
+
 }

@@ -40,11 +40,20 @@ class ContaTest {
 		Conta conta = null;
 		if(flagContaCorrenteComoDefault) {
 			conta = new ContaCorrente();
+		} else {
+			conta = new ContaPoupanca();
 		}
+		
+		conta.depositar(1000.0);
+		
+		conta.rentabilizar();
+		
+		System.out.println(conta.getClass().getName());
+		System.out.println(conta.saldo);
 	}
 	
 	@Test
-	void testConta_toSring() {
+	void testConta_toString() {
 		Conta conta = new ContaCorrente();
 		conta.depositar(100.0);
 		conta.sacar(10.0);
