@@ -1,24 +1,29 @@
 package builder;
 
-public class CarroBuilder {
+
+public class CarroBuilderFluente {
 	private Carro carro = new Carro();
 	
-	public void buildPortas(Porta[] portas) {
+	public CarroBuilderFluente buildPortas(Porta[] portas) {
 		carro.setPortas(portas);
+		return this;
 	}
-	public void buildMotor(Motor m) {
+	public CarroBuilderFluente buildMotor(Motor m) {
 		carro.setMotor(m);
+		return this;
 	}
-	public void buildComputadorBordo(ComputadorBordo cb) {
+	public CarroBuilderFluente buildComputadorBordo(ComputadorBordo cb) {
 		carro.setComputadorBordo(cb);
+		return this;
 	}
-	public void buildFreioABS(FreioABS f) {
+	public CarroBuilderFluente buildFreioABS(FreioABS f) {
 		carro.setFreioABS(f);
+		return this;
 	}
 	
 	private void validarPortas() {
 		if(carro.getPortas() == null) {
-			throw new IllegalStateException("Numero de portas inválido!");
+			throw new IllegalStateException("Carro sem portas!");
 		}
 		int qntPortas = carro.getPortas().length;
 		if(!(qntPortas == 2 || qntPortas == 4)) {
