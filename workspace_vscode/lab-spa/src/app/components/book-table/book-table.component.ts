@@ -1,3 +1,4 @@
+import { AlertService } from './../../services/alert.service';
 import { Component } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { IBook } from 'src/app/models/i-book';
@@ -11,12 +12,19 @@ export class BookTableComponent {
 
   books: IBook[] = [];
 
-  constructor(private service: BookService) { }
+  constructor(
+    private service: BookService,
+    private alertService : AlertService
+  ) { }
 
   ngOnInit(): void {
     this.service.findAll().subscribe({
       next: (data) => this.books = data,
-      error: (err) => console.error(err)
+      error: (err) => {
+        const tit = 'Erro buscando livros';
+        const msg = err.message;
+        this.alertService.error(tit, msg);
+      }
     });
 
     //apenas para debug:

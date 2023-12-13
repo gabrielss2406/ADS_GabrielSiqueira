@@ -7,7 +7,8 @@ import { IBook } from '../models/i-book';
   providedIn: 'root'
 })
 export class BookService {
-  private readonly URI_BOOKS = 'assets/exemplo-de-livros.json';
+  //private readonly URI_BOOKS = 'assets/exemplo-de-livros.json';
+  private readonly URI_BOOKS = 'api/book';
 
   constructor( private http : HttpClient ) { }
 

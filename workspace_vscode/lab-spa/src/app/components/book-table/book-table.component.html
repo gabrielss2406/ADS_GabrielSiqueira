@@ -1,21 +1,23 @@
-<h1>Tabela de Livros</h1>
+<div class="container">
+  <h1>Tabela de Livros</h1>
 
-<table>
-  <thead>
-    <tr>
-      <td>ID</td>
-      <td>Title</td>
-      <td>Category</td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <ng-container *ngFor="let b of books">
+  <table class="table">
+    <thead>
       <tr>
-        <td>{{ b.id }}</td>
-        <td>{{ b.title }}</td>
-        <td>{{ b.category }}</td>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Category</td>
       </tr>
-    </ng-container>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let b of books">
+        <tr>
+          <td>{{ b.id }}</td>
+          <td>{{ b.title }}</td>
+          <td>{{ b.category }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
